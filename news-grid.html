@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Latest news and events from Medivesta Laboratories — research highlights, certifications, and company announcements." />
+    <title>News & Events | MEDIVESTA Laboratories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .news-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            border: 1.5px solid var(--border);
+            color: var(--text-light);
+            transition: var(--transition);
+            cursor: pointer;
+            background: var(--white);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+
+        .featured-news {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+
+        .news-card-featured {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .news-card-featured:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .news-card-featured .news-card-img {
+            height: 280px;
+        }
+
+        .news-card-featured .news-card-body {
+            padding: 32px;
+        }
+
+        .news-card-featured h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .news-page-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 900px) {
+            .featured-news {
+                grid-template-columns: 1fr;
+            }
+
+            .news-page-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .news-page-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="topbar">
+            <div class="container">
+                <div class="topbar-left">
+                    <div class="topbar-item"><i class="fas fa-map-marker-alt"></i>No.85, Industrial Zone, Homagama, Sri
+                        Lanka 10200</div>
+                    <div class="topbar-item"><i class="fas fa-clock"></i>Mon–Fri: 08:00–17:00 | Sat: 08:00–14:00</div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-item"><i class="fas fa-phone"></i><a href="tel:+94112893922"
+                            style="color:inherit">+94 112 893 922</a></div>
+                    <div class="topbar-item"><i class="fas fa-envelope"></i><a href="mailto:info@medivesta.com"
+                            style="color:inherit">info@medivesta.com</a></div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo.png" alt="Medivesta Logo" class="brand-logo" />
+                    <div class="brand-text"><span class="brand-name">MEDIVESTA</span><span
+                            class="brand-tagline">Laboratories (Pvt) Ltd</span></div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-company.html" class="dropdown-item"><i class="fas fa-building"></i> Our
+                                    Company</a></li>
+                            <li><a href="about-team.html" class="dropdown-item"><i class="fas fa-users"></i> Our
+                                    Team</a></li>
+                            <li><a href="about-partners.html" class="dropdown-item"><i class="fas fa-handshake"></i>
+                                    Global Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">SERVICES</a></li>
+                    <li class="nav-item"><a href="news-grid.html" class="nav-link active">NEWS & EVENTS</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link">CAREERS</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">CONTACT US</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">Stay Informed</span>
+            <h1>News & Events</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span>News & Events</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:100px 0; background:var(--light-gray);">
+        <div class="container">
+            <!-- Filters -->
+            <div class="news-filter fade-up">
+                <button class="filter-btn active" onclick="filterNews('all', this)">All</button>
+                <button class="filter-btn" onclick="filterNews('update', this)">Updates</button>
+                <button class="filter-btn" onclick="filterNews('achievement', this)">Achievements</button>
+                <button class="filter-btn" onclick="filterNews('research', this)">Research</button>
+                <button class="filter-btn" onclick="filterNews('event', this)">Events</button>
+            </div>
+
+            <!-- Featured -->
+            <div class="featured-news">
+                <div class="news-card-featured fade-up" data-category="update">
+                    <div class="news-card-img"
+                        style="background:linear-gradient(135deg, var(--primary), var(--accent-dark));">
+                        <i class="fas fa-flask"
+                            style="font-size:4rem; color:rgba(255,255,255,0.25); margin:auto; display:flex; align-items:center; justify-content:center; height:100%;"></i>
+                        <span class="news-card-category">Featured Update</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> March 15, 2026</div>
+                        <h3>Medivesta Launches Expanded Mycotoxin Screening Panel</h3>
+                        <p>We are pleased to announce the launch of our comprehensive multi-mycotoxin screening service,
+                            now covering 15+ mycotoxin analytes using state-of-the-art ELISA and HPLC methodologies.
+                            This expanded panel serves the growing demands of feed safety compliance in the region.</p>
+                        <a href="#" class="news-card-link">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:28px;">
+                    <div class="news-card-featured fade-up" data-category="achievement">
+                        <div class="news-card-img"
+                            style="height:140px; background:linear-gradient(135deg, var(--accent-dark), var(--primary-light));">
+                            <i class="fas fa-trophy"
+                                style="font-size:2.5rem; color:rgba(255,255,255,0.25); margin:auto; display:flex; align-items:center; justify-content:center; height:100%;"></i>
+                            <span class="news-card-category">Achievement</span>
+                        </div>
+                        <div class="news-card-body" style="padding:20px;">
+                            <div class="news-date"><i class="fas fa-calendar"></i> February 2026</div>
+                            <h3 style="font-size:1rem;">ISO 17025 Certification Renewal</h3>
+                            <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="news-card-featured fade-up" data-category="research">
+                        <div class="news-card-img"
+                            style="height:140px; background:linear-gradient(135deg, var(--primary), var(--accent));">
+                            <i class="fas fa-dna"
+                                style="font-size:2.5rem; color:rgba(255,255,255,0.25); margin:auto; display:flex; align-items:center; height:100%; margin-top:40px;"></i>
+                            <span class="news-card-category">Research</span>
+                        </div>
+                        <div class="news-card-body" style="padding:20px;">
+                            <div class="news-date"><i class="fas fa-calendar"></i> January 2026</div>
+                            <h3 style="font-size:1rem;">New R&D Formulation Lab Operational</h3>
+                            <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Grid -->
+            <h3 style="font-size:1.2rem; font-weight:700; color:var(--primary); margin:40px 0 24px;" class="fade-up">All
+                News</h3>
+            <div class="news-page-grid" id="newsGrid">
+                <div class="news-card fade-up" data-category="event">
+                    <div class="news-card-img" style="background:linear-gradient(135deg,#1a3a5c,var(--accent-dark));">
+                        <i class="fas fa-calendar-check"></i>
+                        <span class="news-card-category">Event</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> December 2025</div>
+                        <h3>Annual Science Summit 2025 Participation</h3>
+                        <p>Medivesta scientists presented cutting-edge research on rapid mycotoxin detection methods at
+                            the National Analytical Chemistry Summit.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card fade-up" data-category="update">
+                    <div class="news-card-img" style="background:linear-gradient(135deg,var(--accent-dark),#0a2540);">
+                        <i class="fas fa-tools"></i>
+                        <span class="news-card-category">Update</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> November 2025</div>
+                        <h3>Upgraded HPLC System Enhances Analytical Precision</h3>
+                        <p>Investment in next-generation HPLC technology expands our chemical analysis capabilities with
+                            sub-ppm detection limits.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card fade-up" data-category="research">
+                    <div class="news-card-img"
+                        style="background:linear-gradient(135deg,var(--primary-light),var(--accent));">
+                        <i class="fas fa-microscope"></i>
+                        <span class="news-card-category">Research</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> October 2025</div>
+                        <h3>Research Paper Published on Aflatoxin Prevalence</h3>
+                        <p>Our R&D team co-authored a research paper on aflatoxin B1 prevalence in local feed
+                            ingredients published in a peer-reviewed journal.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card fade-up" data-category="achievement">
+                    <div class="news-card-img" style="background:linear-gradient(135deg,#0d3355,var(--accent-dark));">
+                        <i class="fas fa-star"></i>
+                        <span class="news-card-category">Achievement</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> September 2025</div>
+                        <h3>Medivesta Recognized as Emerging Lab of the Year</h3>
+                        <p>We are proud to receive the Emerging Laboratory of the Year award at the Sri Lanka Industry
+                            Excellence Awards 2025.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card fade-up" data-category="event">
+                    <div class="news-card-img" style="background:linear-gradient(135deg,var(--accent),#024060);">
+                        <i class="fas fa-users"></i>
+                        <span class="news-card-category">Event</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> August 2025</div>
+                        <h3>Client Appreciation Day & Lab Open House</h3>
+                        <p>Medivesta hosted its first Client Appreciation Day, welcoming key clients for lab tours,
+                            presentations, and networking.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card fade-up" data-category="update">
+                    <div class="news-card-img" style="background:linear-gradient(135deg,#002040,var(--accent-dark));">
+                        <i class="fas fa-vials"></i>
+                        <span class="news-card-category">Update</span>
+                    </div>
+                    <div class="news-card-body">
+                        <div class="news-date"><i class="fas fa-calendar"></i> July 2025</div>
+                        <h3>New Stability Chamber Facility Commissioned</h3>
+                        <p>Our climate-controlled stability chambers now offer expanded capacity for ICH-compliant
+                            stability studies in zone IVb conditions.</p>
+                        <a href="#" class="news-card-link">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Stay Up to Date</h2>
+            <p>Subscribe to our newsletter to receive the latest news, research updates, and service announcements from
+                Medivesta.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary">Subscribe Now</a>
+                <a href="services.html" class="btn btn-outline">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand-name">MEDIVESTA</span>
+                    <span class="brand-tagline">Laboratories (Pvt) Ltd</span>
+                    <p>GLP & ISO 17025 certified world-class analytical laboratory.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                            href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-company.html"><i class="fas fa-chevron-right"></i> About Company</a></li>
+                        <li><a href="about-team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="career.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Analytical Services</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Chemical Identification</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Feed Nutritional Analysis</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mycotoxin Analysis</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Microbiological Analysis</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>No.85, Industrial Zone,
+                            Homagama, Sri Lanka – 10200</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+94112893922">+94 112 893
+                            922</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a
+                            href="mailto:info@medivesta.com">info@medivesta.com</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 <strong>Medivesta Laboratory (Pvt) Ltd.</strong> All Rights Reserved.</span>
+                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('open'); });
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 400); });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => { entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); }); }, { threshold: 0.1 });
+        fadeEls.forEach(el => observer.observe(el));
+
+        function filterNews(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('[data-category]');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Explore Medivesta Laboratories' full range of analytical services — chemical identification, feed analysis, mycotoxin testing, stability analysis, and more." />
+    <title>Services | MEDIVESTA Laboratories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .services-detail {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .service-detail-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 48px;
+            align-items: start;
+            padding: 48px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin-bottom: 32px;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .service-detail-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .service-detail-card:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .service-detail-icon-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+
+        .service-detail-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 8px 30px rgba(0, 184, 212, 0.3);
+        }
+
+        .service-detail-num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(0, 184, 212, 0.12);
+            line-height: 1;
+        }
+
+        .service-detail-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .service-detail-content p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .service-tag {
+            background: rgba(0, 184, 212, 0.1);
+            color: var(--accent-dark);
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .service-detail-card {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =================== HEADER =================== -->
+    <header id="header">
+        <div class="topbar">
+            <div class="container">
+                <div class="topbar-left">
+                    <div class="topbar-item"><i class="fas fa-map-marker-alt"></i>No.85, Industrial Zone, Homagama, Sri
+                        Lanka 10200</div>
+                    <div class="topbar-item"><i class="fas fa-clock"></i>Mon–Fri: 08:00–17:00 | Sat: 08:00–14:00</div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-item"><i class="fas fa-phone"></i><a href="tel:+94112893922"
+                            style="color:inherit">+94 112 893 922</a></div>
+                    <div class="topbar-item"><i class="fas fa-envelope"></i><a href="mailto:info@medivesta.com"
+                            style="color:inherit">info@medivesta.com</a></div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo.png" alt="Medivesta Logo" class="brand-logo" />
+                    <div class="brand-text">
+                        <span class="brand-name">MEDIVESTA</span>
+                        <span class="brand-tagline">Laboratories (Pvt) Ltd</span>
+                    </div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-company.html" class="dropdown-item"><i class="fas fa-building"></i> Our
+                                    Company</a></li>
+                            <li><a href="about-team.html" class="dropdown-item"><i class="fas fa-users"></i> Our
+                                    Team</a></li>
+                            <li><a href="about-partners.html" class="dropdown-item"><i class="fas fa-handshake"></i>
+                                    Global Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="services.html" class="nav-link active">SERVICES</a></li>
+                    <li class="nav-item"><a href="news-grid.html" class="nav-link">NEWS & EVENTS</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link">CAREERS</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">CONTACT US</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- =================== PAGE HERO =================== -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">What We Offer</span>
+            <h1>Our Services</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== SERVICES INTRO =================== -->
+    <div class="intro-strip">
+        <div class="container">
+            <div class="intro-item">
+                <i class="fas fa-microscope"></i>
+                <strong>Precision Testing</strong>
+                <span>NIR · FTIR · HPLC · UV</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-shield-alt"></i>
+                <strong>Quality Assured</strong>
+                <span>GLP &amp; ISO 17025 Standards</span>
+            </div>
+            <div class="intro-item">
+                <i class="fas fa-bolt"></i>
+                <strong>Rapid Results</strong>
+                <span>Fast turnaround times</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== SERVICES DETAIL =================== -->
+    <section class="services-detail">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:64px;" class="fade-up">
+                <span class="section-label">Core Services</span>
+                <h2 class="section-title">Comprehensive Laboratory Solutions</h2>
+                <p class="section-desc" style="margin:0 auto;">
+                    Our team of expert scientists delivers accurate, reliable analytical services tailored
+                    to meet the needs of the food, feed, and pharmaceutical industries.
+                </p>
+            </div>
+
+            <!-- Service 1 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-atom"></i></div>
+                    <div class="service-detail-num">01</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Analytical Services</h3>
+                    <p>Our analytical services are specialized in chemistry and microbiology, ensuring accuracy,
+                        compliance, and quality control across the food, feed, and pharmaceutical industries. We provide
+                        comprehensive testing solutions backed by internationally certified methodologies and
+                        state-of-the-art instrumentation.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Chemistry</span>
+                        <span class="service-tag">Microbiology</span>
+                        <span class="service-tag">Quality Control</span>
+                        <span class="service-tag">Compliance Testing</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-microscope"></i></div>
+                    <div class="service-detail-num">02</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Chemical Identification</h3>
+                    <p>Encompasses a diverse set of compounds and parameters from both qualitative and quantitative
+                        analysis through NIR, FTIR, HPLC, and UV spectrometers. Our chemical identification services
+                        provide definitive characterization of APIs, vitamins, amino acids, and complex chemical
+                        mixtures with unrivalled precision.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">NIR Analysis</span>
+                        <span class="service-tag">FTIR Spectroscopy</span>
+                        <span class="service-tag">HPLC</span>
+                        <span class="service-tag">UV Spectrometry</span>
+                        <span class="service-tag">Qualitative Analysis</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-leaf"></i></div>
+                    <div class="service-detail-num">03</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Feed Nutritional Analysis</h3>
+                    <p>Rapid, non-destructive analysis of animal feed, enabling precise determination of nutritional and
+                        chemical composition. Our NIR-based feed analysis platform delivers results in minutes, covering
+                        moisture, protein, fat, fibre, ash, and more — essential for quality control in the animal
+                        nutrition industry.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Animal Feed</span>
+                        <span class="service-tag">NIR Rapid Analysis</span>
+                        <span class="service-tag">Moisture Testing</span>
+                        <span class="service-tag">Protein Analysis</span>
+                        <span class="service-tag">Fat Content</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-bug"></i></div>
+                    <div class="service-detail-num">04</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Mycotoxin Analysis</h3>
+                    <p>Rapid screening tests to determine aflatoxins, DON (Deoxynivalenol), Fumonisins, Ochratoxin, and
+                        Zearalenone in animal feed raw materials. Our immunoassay-based screening platforms provide
+                        fast, reliable detection of these harmful fungal metabolites critical for animal health and food
+                        safety compliance.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Aflatoxins</span>
+                        <span class="service-tag">DON</span>
+                        <span class="service-tag">Fumonisins</span>
+                        <span class="service-tag">Ochratoxin</span>
+                        <span class="service-tag">Zearalenone</span>
+                        <span class="service-tag">Lateral Flow ELISA</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-thermometer-half"></i></div>
+                    <div class="service-detail-num">05</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Stability Analysis</h3>
+                    <p>Accelerated and real-time stability analysis of products, evaluating physical, chemical, and
+                        microbiological parameters to ensure quality and compliance through their shelf life. Our
+                        stability chambers maintain ICH guideline-compliant conditions for pharmaceutical, veterinary,
+                        and food product registration studies.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Accelerated Stability</span>
+                        <span class="service-tag">Real-time Studies</span>
+                        <span class="service-tag">ICH Guidelines</span>
+                        <span class="service-tag">Shelf Life Testing</span>
+                        <span class="service-tag">Drug Registration</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-vials"></i></div>
+                    <div class="service-detail-num">06</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>R&D Formulations</h3>
+                    <p>Innovation in formulation, safety, and compliance to deliver market-ready solutions for the
+                        Animal healthcare and Livestock industry. Our formulation laboratory supports the development of
+                        liquid, oral, powder, and tablet formulations with full analytical characterization and
+                        stability profiling.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">Liquid Formulations</span>
+                        <span class="service-tag">Oral Powders</span>
+                        <span class="service-tag">Tablet Development</span>
+                        <span class="service-tag">Animal Healthcare</span>
+                        <span class="service-tag">Regulatory Compliance</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+
+            <!-- Service 7 -->
+            <div class="service-detail-card fade-up">
+                <div class="service-detail-icon-wrap">
+                    <div class="service-detail-icon"><i class="fas fa-dna"></i></div>
+                    <div class="service-detail-num">07</div>
+                </div>
+                <div class="service-detail-content">
+                    <h3>Microbiological Analysis</h3>
+                    <p>Comprehensive microbiological analysis, including product testing, swab, air monitoring, and
+                        water quality analysis. Our microbiology unit is equipped to perform total viable counts,
+                        pathogen detection, environmental monitoring, and bioburden testing in compliance with
+                        pharmacopoeial standards.</p>
+                    <div class="service-tags">
+                        <span class="service-tag">TVC Testing</span>
+                        <span class="service-tag">Pathogen Detection</span>
+                        <span class="service-tag">Air Monitoring</span>
+                        <span class="service-tag">Water Quality</span>
+                        <span class="service-tag">Swab Testing</span>
+                        <span class="service-tag">Bioburden</span>
+                    </div>
+                    <a href="contact.html" class="btn btn-primary" style="font-size:0.85rem; padding:12px 28px;">Request
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== CTA =================== -->
+    <section class="cta">
+        <div class="container">
+            <h2>Have a Specific Testing Requirement?</h2>
+            <p>Our team of experts is ready to discuss your analytical needs and provide a tailored solution for your
+                industry.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                <a href="about-company.html" class="btn btn-outline">About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand-name">MEDIVESTA</span>
+                    <span class="brand-tagline">Laboratories (Pvt) Ltd</span>
+                    <p>A world-renowned laboratory focusing on Research & Development and Analysis. GLP & ISO 17025
+                        certified.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-company.html"><i class="fas fa-chevron-right"></i> About Company</a></li>
+                        <li><a href="about-team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="career.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Analytical Services</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Chemical Identification</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Feed Nutritional Analysis</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mycotoxin Analysis</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Stability Analysis</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Microbiological Analysis</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>No.85, Industrial Zone,
+                            Homagama, Sri Lanka – 10200</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+94112893922">+94 112 893
+                            922</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a
+                            href="mailto:info@medivesta.com">info@medivesta.com</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 08:00–17:00<br>Sat:
+                            08:00–14:00</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 <strong>Medivesta Laboratory (Pvt) Ltd.</strong> All Rights Reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('open'); });
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 400); });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => { entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 100); }); }, { threshold: 0.1 });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

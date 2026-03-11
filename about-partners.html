@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Medivesta Laboratories' global partners — trusted international organizations supporting our world-class analytical capabilities." />
+    <title>Global Partners | MEDIVESTA Laboratories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .partner-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .partner-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent);
+            transform: translateY(-6px);
+        }
+
+        .partner-logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .partner-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .partner-card p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .partner-region {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent);
+            background: rgba(0, 184, 212, 0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="topbar">
+            <div class="container">
+                <div class="topbar-left">
+                    <div class="topbar-item"><i class="fas fa-map-marker-alt"></i>No.85, Industrial Zone, Homagama, Sri
+                        Lanka 10200</div>
+                    <div class="topbar-item"><i class="fas fa-clock"></i>Mon–Fri: 08:00–17:00 | Sat: 08:00–14:00</div>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-item"><i class="fas fa-phone"></i><a href="tel:+94112893922"
+                            style="color:inherit">+94 112 893 922</a></div>
+                    <div class="topbar-item"><i class="fas fa-envelope"></i><a href="mailto:info@medivesta.com"
+                            style="color:inherit">info@medivesta.com</a></div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo.png" alt="Medivesta Logo" class="brand-logo" />
+                    <div class="brand-text"><span class="brand-name">MEDIVESTA</span><span
+                            class="brand-tagline">Laboratories (Pvt) Ltd</span></div>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">HOME</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link active">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-company.html" class="dropdown-item"><i class="fas fa-building"></i> Our
+                                    Company</a></li>
+                            <li><a href="about-team.html" class="dropdown-item"><i class="fas fa-users"></i> Our
+                                    Team</a></li>
+                            <li><a href="about-partners.html" class="dropdown-item"><i class="fas fa-handshake"></i>
+                                    Global Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="services.html" class="nav-link">SERVICES</a></li>
+                    <li class="nav-item"><a href="news-grid.html" class="nav-link">NEWS & EVENTS</a></li>
+                    <li class="nav-item"><a href="career.html" class="nav-link">CAREERS</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">CONTACT US</a></li>
+                </ul>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="section-label">Worldwide Connections</span>
+            <h1>Global Partners</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <a href="#">About Us</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span>Global Partners</span>
+            </div>
+        </div>
+    </section>
+
+    <section style="padding:100px 0; background:var(--white);">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:64px;" class="fade-up">
+                <span class="section-label">Our Network</span>
+                <h2 class="section-title">Trusted Partners Worldwide</h2>
+                <p class="section-desc" style="margin:0 auto;">
+                    We collaborate with industry-leading organizations across the globe to bring the latest
+                    technologies, reagents, and methodologies to our clients.
+                </p>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;">
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">DG</div>
+                    <span class="partner-region">Sri Lanka</span>
+                    <h3>Dyvesta Group</h3>
+                    <p>The parent organization of Medivesta, Dyvesta is a leading company in the veterinary and
+                        agricultural sector across South Asia.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">FC</div>
+                    <span class="partner-region">International</span>
+                    <h3>FarmChemie</h3>
+                    <p>A global leader in animal nutrition and health products, providing essential reference standards
+                        and collaborative R&D support.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">HP</div>
+                    <span class="partner-region">Europe</span>
+                    <h3>HPLC Systems GmbH</h3>
+                    <p>Supplier of high-performance liquid chromatography systems and accessories for pharmaceutical and
+                        food analysis.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">NA</div>
+                    <span class="partner-region">USA</span>
+                    <h3>NIR Analytics Inc.</h3>
+                    <p>Cutting-edge near-infrared spectroscopy technology provider, supporting our rapid feed and
+                        pharmaceutical analysis capabilities.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">ISO</div>
+                    <span class="partner-region">Global</span>
+                    <h3>ISO Accreditation Body</h3>
+                    <p>International accreditation partner ensuring our laboratory operations meet and exceed ISO/IEC
+                        17025 global standards.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">BG</div>
+                    <span class="partner-region">Asia Pacific</span>
+                    <h3>BioGlobal Solutions</h3>
+                    <p>Partner for microbiological testing consumables, culture media, and quality control organisms for
+                        our microbiology division.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">LT</div>
+                    <span class="partner-region">Germany</span>
+                    <h3>LabTech Pro AG</h3>
+                    <p>Provider of stability chambers, FTIR spectrometers, and precision lab instruments supporting our
+                        analytical infrastructure.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">MC</div>
+                    <span class="partner-region">UK</span>
+                    <h3>MediChem Corp</h3>
+                    <p>Supplier of reference standards, certified reference materials, and analytical grade reagents for
+                        pharmaceutical testing.</p>
+                </div>
+                <div class="partner-card fade-up">
+                    <div class="partner-logo-icon">AG</div>
+                    <span class="partner-region">India</span>
+                    <h3>AgroGlobal Ltd</h3>
+                    <p>Regional partner supporting mycotoxin rapid test kit distribution and feed safety testing
+                        programs across South Asia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling partner logos -->
+    <section class="partners" style="background:var(--light-gray);">
+        <div class="container">
+            <div style="text-align:center; margin-bottom:40px;" class="fade-up">
+                <span class="section-label">Our Ecosystem</span>
+                <h2 class="section-title">Partner Network</h2>
+            </div>
+            <div class="partners-track">
+                <div class="partner-logo">Dyvesta Group</div>
+                <div class="partner-logo">FarmChemie</div>
+                <div class="partner-logo">HPLC Systems GmbH</div>
+                <div class="partner-logo">NIR Analytics Inc.</div>
+                <div class="partner-logo">BioGlobal Solutions</div>
+                <div class="partner-logo">LabTech Pro AG</div>
+                <div class="partner-logo">MediChem Corp</div>
+                <div class="partner-logo">AgroGlobal Ltd</div>
+                <div class="partner-logo">Dyvesta Group</div>
+                <div class="partner-logo">FarmChemie</div>
+                <div class="partner-logo">HPLC Systems GmbH</div>
+                <div class="partner-logo">NIR Analytics Inc.</div>
+                <div class="partner-logo">BioGlobal Solutions</div>
+                <div class="partner-logo">LabTech Pro AG</div>
+                <div class="partner-logo">MediChem Corp</div>
+                <div class="partner-logo">AgroGlobal Ltd</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Interested in Partnering With Us?</h2>
+            <p>We welcome collaborations with like-minded organizations committed to scientific excellence. Let's
+                explore how we can work together.</p>
+            <div class="cta-btns">
+                <a href="contact.html" class="btn btn-primary">Get In Touch</a>
+                <a href="about-company.html" class="btn btn-outline">About Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand-name">MEDIVESTA</span>
+                    <span class="brand-tagline">Laboratories (Pvt) Ltd</span>
+                    <p>GLP & ISO 17025 certified world-class analytical laboratory.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i
+                                class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a
+                            href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-widget">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about-company.html"><i class="fas fa-chevron-right"></i> About Company</a></li>
+                        <li><a href="about-team.html"><i class="fas fa-chevron-right"></i> Our Team</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="career.html"><i class="fas fa-chevron-right"></i> Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Analytical Services</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Chemical Identification</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Feed Nutritional Analysis</a>
+                        </li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Mycotoxin Analysis</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Microbiological Analysis</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-widget">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>No.85, Industrial Zone,
+                            Homagama, Sri Lanka – 10200</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+94112893922">+94 112 893
+                            922</a></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><a
+                            href="mailto:info@medivesta.com">info@medivesta.com</a></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 <strong>Medivesta Laboratory (Pvt) Ltd.</strong> All Rights Reserved.</span>
+                <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Use</a></div>
+            </div>
+        </div>
+    </footer>
+    <button id="backToTop"><i class="fas fa-chevron-up"></i></button>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); navMenu.classList.toggle('open'); });
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backToTop.classList.toggle('show', window.scrollY > 400); });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+        const fadeEls = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => { entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); }); }, { threshold: 0.1 });
+        fadeEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
